@@ -15,7 +15,3 @@ async function dbConnection() {
 }
 //initlizing DB
 export const client = await dbConnection();
-
-
-
-
