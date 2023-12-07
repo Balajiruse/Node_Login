@@ -1,11 +1,12 @@
 import { MongoClient } from "mongodb";
-const connectionString =
-  "mongodb+srv://BalajiRuse:Bnm@2223@cluster0.ofob44g.mongodb.net/";
+import dotenv from "dotenv";
+dotenv.config();
+const connectionString = process.env.MONGO_URL;
 
-const localString = "mongodb://127.0.0.1:27017/fsd";
+//const localString = "mongodb://127.0.0.1:27017/Docapp";
 async function dbConnection() {
   try {
-    const client = new MongoClient(localString);
+    const client = new MongoClient(connectionString);
     await client.connect();
     console.log("Database connected");
     return client;
